@@ -6,18 +6,35 @@ subway = {
 
 puts "What line are you starting with #{subway.keys}?"
 start_line = gets.chomp
+
+until subway.keys.include?(start_line) do
+  puts "Invalid. Please re-enter #{subway.keys}"
+  start_line = gets.chomp
+end
 puts "You're starting on " + start_line
 
 puts "What station are you leaving from #{subway[start_line]}?"
 start_station = gets.chomp
+until subway[start_line].include?(start_station) do
+  puts "Invalid. Please re-enter #{subway[start_line]}"
+  start_line = gets.chomp
+end
 puts "You're leaving from " + start_station
 
 puts "What line are you arriving on #{subway.keys}?"
 end_line = gets.chomp
+until subway.keys.include?(end_line) do
+  puts "Invalid. Please re-enter #{subway.keys}"
+  end_line = gets.chomp
+end
 puts "You're ending your journey on " + end_line
 
 puts "What station are you ending at #{subway[end_line]}?"
 end_station = gets.chomp
+until subway[end_line].include?(end_station) do
+  puts "Invalid. Please re-enter #{subway[end_line]}"
+  end_station = gets.chomp
+end
 puts "You're ending at " + end_station
 
 
